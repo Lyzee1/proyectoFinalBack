@@ -1,46 +1,71 @@
-# Getting Started with Create React App
+Este proyecto es una aplicación web para gestionar superhéroes, donde los usuarios pueden registrarse, iniciar sesión y realizar operaciones CRUD (Crear, Leer, Actualizar y Eliminar) sobre un catálogo de superhéroes.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Tecnologías utilizadas
 
-## Available Scripts
+### Frontend
+- **React**
+- **TypeScript**
+- **React Router**
+- **CSS**
+### Backend
+- **Node.js**
+- **Express**
+- **MySQL**
+- **bcrypt**
+- **express-session**
+- **CORS**
 
-In the project directory, you can run:
+## Estructura del proyecto
 
-### `npm start`
+### Frontend
+- **`App.tsx`**: Maneja el registro e inicio de sesión del usuario.
+- **`sesion.tsx`**: Componente principal donde los usuarios pueden ver y administrar la lista de superhéroes.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Backend
+- **`app.js`**: Configura el servidor Express, el manejo de sesiones y el enrutamiento.
+- **Rutas**:
+  - **`routes/superheroes.js`**: Rutas para manejar las operaciones CRUD sobre los superhéroes.
+  - **`routes/routesUs/usersRoutes.js`**: Rutas para el registro, inicio de sesión y cierre de sesión de usuarios.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Funcionalidades principales
 
-### `npm test`
+### Autenticación
+1. **Registro de usuarios**:
+   - Endpoint: `/users/register`
+2. **Inicio de sesión**:
+   - Endpoint: `/users/login`
+3. **Cierre de sesión**:
+   - Endpoint: `/users/logout`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Gestión de superhéroes
+1. **Listar todos los superhéroes**:
+   - Endpoint: `/superheroes/`
+2. **Crear un nuevo superhéroe**:
+   - Endpoint: `/superheroes/save`
+3. **Actualizar un superhéroe**:
+   - Endpoint: `/superheroes/:id`
+4. **Eliminar un superhéroe**:
+   - Endpoint: `/superheroes/:id`
 
-### `npm run build`
+## Configuración del entorno
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Base de datos
+1. Cree una base de datos llamada `marvel` en MySQL.
+2. Cree las siguientes tablas:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sql
+CREATE TABLE usuarios (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  usuario VARCHAR(255) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL
+);
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+CREATE TABLE superheroes (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  alias VARCHAR(255) NOT NULL,
+  nombre VARCHAR(255) NOT NULL,
+  apellido VARCHAR(255),
+  edad INT,
+  ciudad VARCHAR(255),
+  poderes TEXT
+);
