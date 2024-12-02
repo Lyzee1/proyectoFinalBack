@@ -1,0 +1,182 @@
+/* Estilos globales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #7f8c8d;
+  color: #333;
+  margin: 20px;
+}
+
+.contenedor-principal {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Sección de la lista */
+.seccion-lista {
+  background-color: #ff6b6b;
+  width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.seccion-lista th {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.seccion-lista th, .seccion-lista td {
+  border: 2px solid #ffffff;
+}
+
+.seccion-lista td {
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Botones */
+.boton-eliminar, .boton-editar {
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.boton-eliminar {
+  background-color: #e63946;
+  color: white;
+}
+
+.boton-eliminar:hover {
+  background-color: #d62839;
+}
+
+.boton-editar {
+  background-color: #457b9d;
+  color: white;
+}
+
+.boton-editar:hover {
+  background-color: #1d3557;
+}
+
+.boton-agregar {
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+  height: 50px;
+  margin: 20px auto;
+  display: block;
+  border: none;
+  background-color: #06d6a0;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.boton-agregar:hover {
+  background-color: #05c491;
+}
+
+/* Sección del formulario */
+.seccion-formulario {
+  width: 100%;
+  background-color: #ff6b6b;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.seccion-formulario h2 {
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.seccion-formulario form input, 
+.seccion-formulario form button {
+  width: 100%;
+  max-width: 400px;
+  margin: 10px auto;
+  display: block;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.seccion-formulario form input:focus {
+  outline: none;
+  border-color: #06d6a0;
+  box-shadow: 0 0 5px rgba(6, 214, 160, 0.5);
+}
+
+.seccion-formulario form button {
+  background-color: #06d6a0;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.seccion-formulario form button:hover {
+  background-color: #05c491;
+}
+
+.seccion-formulario form button[type="button"] {
+  background-color: #e63946;
+}
+
+.seccion-formulario form button[type="button"]:hover {
+  background-color: #d62839;
+}
+
+/* Botón de logout */
+.button {
+  background-color: #457b9d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 20px auto;
+  max-width: 200px;
+}
+
+.button:hover {
+  background-color: #1d3557;
+}
+
+p {
+  text-align: center;
+  color: #333;
+  margin-top: 10px;
+}
